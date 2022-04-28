@@ -1,0 +1,44 @@
+{
+  "name": "jest-import-alias-reproduce",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --colors --verbose --runInBand"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "files": [
+    "src/*.js",
+    "src/*.d.ts",
+    "src/**/*.js",
+    "src/**/*.d.ts"
+  ],
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": "./src/index.js",
+  "imports": {
+    "#src/*": "./src/*.js",
+    "#tests/*": "./tests/*.js"
+  },
+  "dependencies": {
+    "@secjs/utils": "1.8.8"
+  },
+  "devDependencies": {
+    "cross-env": "7.0.3",
+    "jest": "28.0.2"
+  },
+  "jest": {
+    "rootDir": ".",
+    "testMatch": [
+      "**/tests/**/*Test.js"
+    ],
+    "transform": {},
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "#src/(.*)": "<rootDir>/src/$1",
+      "#tests/(.*)": "<rootDir>/tests/$1"
+    }
+  }
+}
