@@ -7,10 +7,10 @@
  * file that was distributed with this source code.
  */
 
-import { main } from '#src/index'
+import {main} from '#src/index'
 
 describe('\n ExampleTest', () => {
-  it('example test', async () => {
-    await main()
-  })
+    it('example test', async () => {
+        await main()
+    })
 })
