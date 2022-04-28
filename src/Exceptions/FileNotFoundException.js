@@ -11,7 +11,7 @@ export class FileNotFoundException extends Exception {
         const content = `The file ${filePath} does not exist.`
         const status = 404
         const code = 'E_NOT_FOUND_FILE'
-        const help = `Try using File class of @secjs/utils and running the File.create("${filePath}") method to create the file first.`
+        const help = `Try using File class of @secjs/utils and running the file.create("${filePath}") method to create the file first.`
 
         super(content, status, code, help)
     }
